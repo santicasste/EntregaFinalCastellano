@@ -1,0 +1,239 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* TIPOGRAFÍA */
+
+body {
+    font-family: 'DM Serif Display';
+    
+}
+
+
+
+/* ESTILO MOBILE */
+
+    /* HEADER */
+
+header{
+    display: flex;
+    background-color: #2e0f15;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+header nav nav a h2{
+    color: #eff6e0;
+}
+
+header nav nav a p{
+    color: #eff6e0;
+}
+
+.icono{
+    height: 45px;
+    margin-left: 10px;
+}
+
+.contenedor_icono{
+    display: flex;
+    
+}
+
+.contenedor_nav{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+.nav_1{
+    color: #eff6e0;
+}
+
+.nav_2{
+    color: #eff6e0;
+}
+
+.nav_3{
+    color: #eff6e0;
+}
+
+.nav_4{
+    color: #eff6e0;
+}
+
+.nav_5{
+    color: #eff6e0;
+}
+
+.icono_2{
+    display: none;
+}
+
+   /* FIN HEADER  */
+
+    main {
+    background-color: #120309;
+    height: 100%;
+}
+
+   /* MAIN home */
+
+main section div p {
+    color: #eff6e0;
+}
+
+main section div p{
+    text-align: center;
+}
+
+.charly_home {
+    display: none;
+}
+
+.contenedor_main_home {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor_info {
+    font-style: oblique;
+    max-width: 70%;
+    margin: auto;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #2e0f15;
+}
+
+.contenedor_titulo {
+    text-align: center;
+}
+
+.charly, .garcia {
+    font-size: 7vh;
+    color: #eff6e0;
+}
+
+.garcia {
+    margin-top: -5.5vh;
+    color: #840705;
+}
+
+.charly_mobile {
+    width: 100%;
+    margin: 0;
+    filter: drop-shadow(4px 4px 7px rgba(116, 12, 12, 0.5));
+}
+
+/* FIN MAIN home */
+
+/* MAIN CARRERA */
+/* FIN MAIN CARRERA */
+
+/* MAIN DISCOGRAFIA */
+
+.contenedor_1_disco{
+    border-bottom-left-radius: 4%;
+    border-bottom-right-radius: 4%;
+    
+}
+
+.titulo_1_disco{
+        color: #eff6e0;
+        font-size: 7vh;
+        
+}
+
+.titulo_2_disco{
+        color: #eff6e0;
+        text-align: left;
+        font-size: 2.3vh;
+}
+
+.spotify_desktop{
+    display: none;
+}
+
+.spotify_mobile{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap:25px;
+    align-items: center;
+}
+
+
+.contenedor_spotify{
+    display: grid;
+    margin: 10px 10px 0px 10px;
+    margin-top: 15px;
+}
+
+.anio_disco{
+    font-size: 6vh;
+    color:#eff6e0;
+    text-shadow: 2px 2px 6px rgb(173, 7, 7);
+    
+}
+
+/* FIN MAIN DISCOGRAFIA */
+
+/* MAIN GALERIA */
+/* FIN MAIN GALERIA */
+
+/* MAIN CONTACTO */
+/* FIN MAIN CONTACTO */
+
+
+/* FOOTER */ 
+
+footer{
+    background-color: #2e0f15;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.contenedor_foot{
+    display: none;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.derechos_footer{ 
+    display: none;
+    color: #eff6e0;
+    background-color:bisque;
+    align-self: center;
+    justify-content: center;   
+}
+
+.icono_footer{
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+}
+
+.youtube{
+    height: 4vh;
+}
+
+.facebook{
+    height: 5vh;
+    margin-right: 5px;
+}
+
+.instagram{
+    height: 5vh;
+}
+
+/* FIN FOOTER home*/ 
+
