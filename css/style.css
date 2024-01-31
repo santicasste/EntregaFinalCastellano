@@ -12,45 +12,27 @@
 
 body {
     font-family: 'DM Serif Display';
-    
+    background-color: #120309
 }
 
 
 
 /* ESTILO MOBILE */
 
-    /* HEADER */
-
 header{
-    display: flex;
     background-color: #2e0f15;
+}
+
+header nav{
+    display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
 
-header nav nav a h2{
-    color: #eff6e0;
-}
-
-header nav nav a p{
-    color: #eff6e0;
-}
-
 .icono{
     height: 45px;
-    margin-left: 10px;
-}
-
-.contenedor_icono{
-    display: flex;
-    
-}
-
-.contenedor_nav{
-    display: flex;
-    gap: 10px;
-    margin-right: 10px;
+    margin-left: 1.5vh;
 }
 
 .nav_1{
@@ -77,20 +59,19 @@ header nav nav a p{
     display: none;
 }
 
+.nav_button:hover{
+    color: #7a7778;
+    background-color: #1f0710;
+}
+
    /* FIN HEADER  */
 
-    main {
-    background-color: #120309;
-    height: 100%;
-}
+
 
    /* MAIN home */
 
 main section div p {
-    color: #eff6e0;
-}
-
-main section div p{
+    color: #cfcfcf;
     text-align: center;
 }
 
@@ -114,15 +95,17 @@ main section div p{
 
 .contenedor_titulo {
     text-align: center;
+    margin-top: 2vh;
 }
 
 .charly, .garcia {
-    font-size: 7vh;
+    font-size: 9.5vh;
     color: #eff6e0;
+
 }
 
 .garcia {
-    margin-top: -5.5vh;
+    margin-top: -3.5vh;
     color: #840705;
 }
 
@@ -132,29 +115,99 @@ main section div p{
     filter: drop-shadow(4px 4px 7px rgba(116, 12, 12, 0.5));
 }
 
+.charly h2, .garcia h2 {
+    font-size: inherit;
+    margin-bottom: inherit;
+    
+}
+
 /* FIN MAIN home */
 
 /* MAIN CARRERA */
+
+.main_carrera{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 20% 60%;
+}
+.titulos_carrera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vh;
+}
+
+.titulo_1_carrera{
+    color: #eff6e0;
+    font-size: 5vh;
+}
+
+.titulo_2_carrera{
+    color: #840705;
+    font-size: 5.3vh;
+}
+
+.descripcion_carrera{
+    margin: 1rem;
+    color: #cfcfcf;
+    font-style: oblique;
+    max-width: 70%;
+    margin: auto;
+    height: auto;
+    text-align: center;
+    margin-bottom: 9vh;
+    margin-top: 3vh;
+}
+
+.descripcion_carrusel{
+    color:#cfcfcf;
+    background-color: #1b0b0edf;
+    font-style: italic;
+    margin: 30px;
+    border-radius: 15% ;
+    padding: 2px;
+}
+
+.imagen{
+    height: 358px;
+    width: 534px;
+}
 /* FIN MAIN CARRERA */
 
 /* MAIN DISCOGRAFIA */
 
-.contenedor_1_disco{
-    border-bottom-left-radius: 4%;
-    border-bottom-right-radius: 4%;
-    
+.main_disco{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr) ;
+    gap: 2vh;
 }
 
-.titulo_1_disco{
-        color: #eff6e0;
-        font-size: 7vh;
-        
+.titulos_disco{
+    margin: 3vh;
+    text-align: center;
+}
+
+.titulo_principal_disco{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo_1_disco {
+    color: #eff6e0;
+    font-size: 5vh;
+    text-align: center;
+}
+
+.subtitulo_1_disco{
+    color: #840705;
+    font-size: 5.4vh;
 }
 
 .titulo_2_disco{
-        color: #eff6e0;
-        text-align: left;
-        font-size: 2.3vh;
+    color: #cfcfcf;
+    margin-top: 2rem;
 }
 
 .spotify_desktop{
@@ -162,33 +215,140 @@ main section div p{
 }
 
 .spotify_mobile{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap:25px;
-    align-items: center;
-}
-
-
-.contenedor_spotify{
-    display: grid;
-    margin: 10px 10px 0px 10px;
-    margin-top: 15px;
+    justify-self: center;
 }
 
 .anio_disco{
-    font-size: 6vh;
+    font-size: 2vh;
     color:#eff6e0;
     text-shadow: 2px 2px 6px rgb(173, 7, 7);
-    
+    text-align: center;
+    font-style: italic;
 }
 
 /* FIN MAIN DISCOGRAFIA */
 
 /* MAIN GALERIA */
+
+.titulos_galeria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vh;
+}
+
+.titulo_1_galeria{
+    color: #eff6e0;
+    font-size: 5vh; 
+}
+
+.titulo_2_galeria{
+    color: #840705;
+    font-size: 5.3vh;
+}
+
+
+
+main div div  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor_collage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35% 20% 35% 10%;
+    gap: 1vh;
+    margin: 2.5rem 3rem;
+}
+
+.contenedor_collage .img_7{
+    grid-column: span 2;
+}
+
+
+
 /* FIN MAIN GALERIA */
 
 /* MAIN CONTACTO */
+
+.main_contacto{
+    height: 100%;
+    display: grid;
+    margin: 1.5vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 12% 18% 45% 25%;
+}
+
+.titulo_1_contacto{
+    background: linear-gradient(to right, #eff6e0 42%, #840705 50% );
+    background-clip: text; 
+    color: transparent; 
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.titulo_2_contacto{
+    color: #cfcfcf;
+    max-width: 70%;
+    text-align: center;
+    justify-self: center;
+    font-size: 1.8vh;
+    font-style: italic;
+}
+
+.titulo_3_contacto{
+    color: #cfcfcf;
+    text-align: center;
+    font-size: 3.5vh;
+    margin: 4vh;
+    font-style: italic;
+}
+
+.mapa_contacto{
+    justify-self: center;
+}
+
+.label{
+    color: #eff6e0;
+}
+
+.formulario_contacto {
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+    padding: 20px;
+    background-color: #120309; 
+    text-align: center; 
+}
+
+input[type="text"], input[type="email"], textarea {
+    background-color: #1f0710; 
+    color: #eff6e0;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px; 
+    border: 1px solid #eff6e0; 
+    border-radius: 4px;
+    
+}
+
+input[type="submit"], input[type="reset"] {
+    background-color: #eff6e0; 
+    color: #120309; 
+    padding: 10px 20px;
+    margin: 8px; 
+    border: none;
+    border-radius: 1.5vh;
+    cursor: pointer;
+}
+
+input[type="reset"]:hover, input[type="submit"]:hover {
+    background-color: #b6b2b3; 
+}
+
+
 /* FIN MAIN CONTACTO */
 
 
@@ -199,6 +359,7 @@ footer{
     display: flex;
     justify-content: space-between;
     height: 100%;
+    margin: 0px;
 }
 
 
@@ -233,6 +394,7 @@ footer{
 
 .instagram{
     height: 5vh;
+    color: #120309;
 }
 
 /* FIN FOOTER home*/ 
