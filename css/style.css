@@ -35,25 +35,6 @@ header nav{
     margin-left: 1.5vh;
 }
 
-.nav_1{
-    color: #eff6e0;
-}
-
-.nav_2{
-    color: #eff6e0;
-}
-
-.nav_3{
-    color: #eff6e0;
-}
-
-.nav_4{
-    color: #eff6e0;
-}
-
-.nav_5{
-    color: #eff6e0;
-}
 
 .icono_2{
     display: none;
@@ -104,6 +85,11 @@ main section div p {
 
 }
 
+.charly h2, .garcia h2 {
+    font-size: inherit;
+    margin-bottom: inherit;
+}
+
 .garcia {
     margin-top: -3.5vh;
     color: #840705;
@@ -115,11 +101,7 @@ main section div p {
     filter: drop-shadow(4px 4px 7px rgba(116, 12, 12, 0.5));
 }
 
-.charly h2, .garcia h2 {
-    font-size: inherit;
-    margin-bottom: inherit;
-    
-}
+
 
 /* FIN MAIN home */
 
@@ -397,5 +379,115 @@ footer{
     color: #120309;
 }
 
-/* FIN FOOTER home*/ 
+/* FIN FOOTER */ 
 
+
+/* ---------------------------------- */
+
+
+/* MQ Desktop */ 
+
+@media screen and (min-width: 1200px){
+
+    /* HEADER DESKTOP*/
+    .icono{
+        height: 70px;
+    }
+
+    header nav div div{
+        justify-content: end;
+        gap: 5vh;
+    }
+
+    .nav_button{
+        background-color: #eff6e0f1;
+        color:#1f0710 !important;
+        border-radius: 6%;
+        padding: 5px 10px 5px 10px;
+        
+    }
+
+    .nav_button:hover{
+        background-color: #7a7778;
+    }
+
+    /* FIN HEADER DESKTOP*/
+
+    /* MAIN HOME DESKTOP*/
+    .contenedor_main_home{
+        display: grid;
+        grid-template-columns: 1.5fr 2fr;
+        grid-template-rows: 30% 70%;
+    }
+    .charly_home{
+        display: inline-block;
+        height: 700px;
+        grid-row: span 2;
+        filter: drop-shadow(5px 4px 7px rgba(116, 12, 12, 0.5));
+    }
+    .charly_mobile{
+        display: none;
+    }
+
+    .contenedor_titulo{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .garcia{
+        margin-top: 10vh;
+    }
+    .charly h2, .garcia h2 {
+        font-size: 1.6em;
+        font-style: italic;
+    }
+
+    .contenedor_info{
+        max-width: 100%;
+        grid-column: 2 / 2;
+        font-size: 1.4rem;
+        margin-top: -5vh;
+    }
+    
+    /* FIN MAIN HOME DESKTOP*/
+
+    /* MAIN DISOGRAFÍA */ 
+
+    .main_disco{
+        display: flex;
+        flex-direction: column;
+    }
+    .spotify_mobile{
+        display: none;
+    }
+    .spotify_desktop{
+        display: block;
+    }
+
+    .spotify_collage{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        padding: auto;
+        column-gap: 15vh;
+        row-gap: 8vh;
+        margin-bottom: 3rem;
+    }
+
+
+    .titulo_1_disco{
+        font-size: 9vh;
+    }
+
+    .subtitulo_1_disco{
+        font-size: 10.2vh;
+    }
+
+    .titulo_2_disco{
+        font-size: 2.5vh;
+    }
+    /* FIN MAIN DISOGRAFÍA */ 
+}
