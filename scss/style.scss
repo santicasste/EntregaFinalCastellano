@@ -1,0 +1,31 @@
+//import
+
+@import "utilities/variables";
+@import "componentes/reset";
+@import "componentes/font-family";
+
+
+// HEADER & FOOTER //
+
+@import "componentes/header";
+@import "componentes/footer";
+
+// HOME // 
+
+@import "componentes/home";
+
+// CARRERA // 
+
+@import "componentes/carrera";
+
+// DISCOGRAFÍA // 
+
+@import "componentes/discografia";
+
+// GALERIA // 
+
+@import "componentes/galeria";
+
+// CONTACTO // 
+
+@import "componentes/contacto";

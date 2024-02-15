@@ -1,0 +1,129 @@
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+
+
+.main_contacto{
+
+    display: nth($display , 2 );
+    height: 100%;   
+    margin: 1.5vh;
+    grid-template-columns: 100%;
+    grid-template-rows: 12% 13% 48% 25%;
+
+    .titulo_1_contacto{
+        background: linear-gradient(to right, #eff6e0 42%, #840705 50% );
+        background-clip: text; 
+        color: transparent; 
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .titulo_2_contacto{
+        color: nth($paleta_colores , 3 );
+        max-width: 70%;
+        text-align: center;
+        justify-self: center;
+        font-size: 1.8vh;
+        font-style: italic;
+    }
+
+    .formulario_contacto{
+        width: 60%;
+        align-self: center;
+        justify-self: center;
+        padding: 20px;
+        background-color: #120309; 
+        text-align: center; 
+        fieldset{
+            form{
+                label{
+                    color: nth($paleta_colores , 1 );
+                }
+                div{
+                    
+                    label{
+                        color: nth($paleta_colores , 1 );
+                    }
+
+                    input[type="text"], input[type="email"], textarea {
+                        background-color: #1f0710; 
+                        color: nth($paleta_colores , 1 );
+                        width: calc(100% - 22px);
+                        padding: 10px;
+                        margin: 5px; 
+                        border: 1px solid nth($paleta_colores , 1 ); 
+                        border-radius: 4px;
+                        
+                    }
+
+                    input[type="submit"] {
+                        background-color: nth($paleta_colores , 1 ); 
+                        color: #120309; 
+                        padding: 10px 20px;
+                        margin: 8px; 
+                        border: none;
+                        border-radius: 1.5vh;
+                        cursor: pointer;
+                    }
+
+                    
+                    input[type="submit"]:hover {
+                        background-color: #b6b2b3; 
+                    }
+                }
+            }
+        }
+    }
+
+    .mapa_contacto{
+        justify-self: center;
+
+        .titulo_3_contacto{
+            color: #cfcfcf;
+            text-align: center;
+            font-size: 3.5vh;
+            margin: 4vh;
+            font-style: italic;
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main_contacto{
+
+        .titulo_2_contacto{
+            font-size: 2.2vh;
+        }
+
+        .formulario_contacto{
+            fieldset{
+                form{
+                    label{
+                        font-size: 2.2vh;
+                    }
+                    div{
+                        label{
+                            font-size: 2.2vh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .main_contacto{
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 0.8fr 0.8fr;
+
+        .titulo_2_contacto{
+            grid-row: 2;
+        }
+        
+        .formulario_contacto{
+            grid-row: span 3;
+        }
+    }
+}

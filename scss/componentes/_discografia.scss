@@ -1,0 +1,130 @@
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+
+
+.main_disco{
+    display: nth($display , 2 );
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr) ;
+    gap: 2vh;
+
+    .titulos_disco{
+        margin: 3vh;
+        text-align: center;
+
+        .titulo_principal_disco{
+            display: nth($display, 1 );
+            align-items: center;
+            justify-content: center;
+
+            .titulo_1_disco{
+                color: nth($paleta_colores, 1 );
+                font-size: 5vh;
+                text-align: center;
+            }
+
+            .subtitulo_1_disco{
+                color: nth($paleta_colores , 5 );
+                font-size: 5.4vh;
+            }
+        }
+
+        .titulo_2_disco{
+            color: nth($paleta_colores , 3 );
+            margin-top: 2rem;
+        }
+    }
+
+    .spotify_mobile{
+        justify-self: center;
+
+        .anio_disco{
+            font-size: 2vh;
+            color:#f6e8e0;
+            text-shadow: 2px 2px 6px rgb(173, 7, 7);
+            text-align: center;
+            font-style: italic;
+        }
+    }
+
+    .spotify_collage_desktop{
+        display: nth($display, 4 );
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    .main_disco{
+
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        .titulos_disco{
+
+            grid-column: span 2;
+
+            .titulo_principal_disco{
+
+                .titulo_1_disco{
+                    font-size: 6.5vh;
+                }
+        
+                .subtitulo_1_disco{
+                    font-size: 6.9vh;
+                }
+            }
+
+            .titulo_2_disco{
+                font-size: 2.12vh;
+            }
+        }
+
+        .spotify_mobile{
+            .anio_disco{
+                display: nth($display, 4 );
+            }
+        }
+    }
+}
+
+/* MQ Desktop */ 
+
+@media screen and (min-width: 1200px){
+    .main_disco{
+        display: nth($display, 1 );
+        flex-direction: column;
+
+        .titulos_disco{
+            .titulo_principal_disco{
+                .titulo_1_disco{
+                    font-size: 7vh;
+                }
+
+                .subtitulo_1_disco{
+                    font-size: 8.2vh;
+                }
+            }
+                .titulo_2_disco{
+        font-size: 2.3vh;
+        }
+        }
+
+        .spotify_mobile{
+            display: nth($display, 4 );
+        }
+
+        .spotify_collage_desktop{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: auto;
+            column-gap: 15vh;
+            row-gap: 8vh;
+            margin-bottom: 3rem;
+        }
+    }
+}

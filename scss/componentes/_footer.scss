@@ -1,0 +1,17 @@
+
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+//Estilos FOOTER
+
+footer {
+    background-color: nth($paleta_colores, 6);
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+    .icono_footer {
+        height: 5vh;
+    }
+}

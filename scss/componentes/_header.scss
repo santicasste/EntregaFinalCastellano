@@ -1,0 +1,74 @@
+
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+//Estilos HEADER
+
+header {
+    background-color: $color_header;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        div {
+            .icono {
+                height: 45px;
+                margin-left: 1.5vh;
+            }
+
+            div {
+                div {
+                    .nav_button:hover {
+                        background-color: nth($paleta_colores , 7 );
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    header{
+        .navbar{
+            .container-fluid{
+                .icono{
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
+/* MQ Desktop/Tablet (para navbar) */ 
+
+@media screen and (min-width: 992px){
+    header{
+        .navbar{
+            .container-fluid{
+
+                .icono{
+                    height: 58px;
+                }
+
+                .navbar-collapse{
+                    justify-content: end;
+                    .navbar-nav{
+                        gap: 5vh;
+                        .nav_button{
+                            background-color: nth($paleta_colores , 1 );
+                            color:nth($paleta_colores , 7 ) !important;
+                            border-radius: 6%;
+                            padding: 5px 10px 5px 10px;
+                        }
+                        .nav_button:hover{
+                            background-color: nth($paleta_colores , 4 );
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

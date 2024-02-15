@@ -1,0 +1,82 @@
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+
+
+.main_carrera{
+    
+    display: nth($display , 2);
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 20% 60%;
+
+    .titulos_carrera{
+        display: nth($display , 1 );
+        justify-content: center;
+        align-items: center;
+        padding-top: 3vh;
+
+        .titulo_1_carrera{
+            color: nth($paleta_colores , 1 );
+            font-size: 5vh;
+        }
+
+        .titulo_2_carrera{
+            color: nth($paleta_colores , 5 );
+            font-size: 5.3vh;
+        }
+    }
+
+    .descripcion_carrera{
+        margin: 1rem;
+        color: nth($paleta_colores, 3 );
+        font-style: oblique;
+        max-width: 70%;
+        margin: auto;
+        height: auto;
+        text-align: center;
+        margin-bottom: 9vh;
+        margin-top: 3vh;
+    }
+
+    .carousel{
+        .carousel-inner{
+            .carousel-item{
+                .imagen{
+                    height: 358px;
+                    width: 534px;
+                }
+                .descripcion_carrusel{
+                    color:#ececec;
+                    background-color: #000000ea;
+                    font-style: italic;
+                    margin: 30px;
+                    padding: 2px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main_carrera{
+
+        .titulos_carrera{
+
+            .titulo_1_carrera{
+                color: nth($paleta_colores , 1 );
+                font-size: 6.5vh;
+            }
+
+            .titulo_2_carrera{
+                color: nth($paleta_colores , 5 );
+                font-size: 6.8vh;
+            }
+        }
+
+        .descripcion_carrera{
+            p{
+                font-size: 2.12vh;
+            }
+        }
+    }
+}

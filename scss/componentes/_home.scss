@@ -1,0 +1,125 @@
+//importar variables
+
+@import "../utilities/variables";
+@import "../componentes/lists";
+
+
+.contenedor_main_home {
+
+    display: nth($display , 1);
+    flex-direction: column;
+
+
+    .contenedor_foto {
+        div {
+            .charly_home {
+                display: nth($display , 4);
+            }
+        }
+    }
+
+
+    .contenedor_titulo {
+        text-align: center;
+        margin-top: 2vh;
+
+        .charly {
+            font-size: 9.5vh;
+            color: nth($paleta_colores , 1);
+
+            h2 {
+                font-size: inherit;
+                margin-bottom: inherit;
+            }
+        }
+
+        .garcia {
+            font-size: 9.5vh;
+            color: nth($paleta_colores , 5);
+            margin-top: -3.5vh;
+
+            h2 {
+                font-size: inherit;
+                margin-bottom: inherit;
+            }
+        }
+
+        .contenedor_info {
+            font-style: oblique;
+            max-width: 70%;
+            margin: auto;
+            height: auto;
+            padding: 20px;
+            border: 1px solid #2e0f15;
+
+            p {
+                color: nth($paleta_colores , 3);
+            }
+        }
+    }
+
+    div {
+        .charly_mobile {
+            width: 100%;
+            margin: 0;
+            filter: drop-shadow(4px 4px 7px rgba(116, 12, 12, 0.5));
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .contenedor_main_home {
+
+        .contenedor_titulo {
+
+            .contenedor_info {
+
+                p {
+                    font-size: 2.2vh;
+                }
+            }
+        }
+    }
+}
+
+/* MQ Desktop */ 
+
+@media screen and (min-width: 1200px){
+    .contenedor_main_home{
+        display: nth($display, 2 );
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 1fr;
+
+        .contenedor_foto{
+            div{
+                    .charly_home{
+                    display: nth($display, 2 );
+                    height: 700px;
+                    grid-row: span 2;
+                    filter: drop-shadow(5px 4px 7px rgba(116, 12, 12, 0.5));
+                }
+            }
+        }
+
+        .contenedor_titulo{
+            .charly{
+                h2{
+                    margin-top: 6vh;
+                    font-size: 9rem;
+                }
+            }
+            .garcia{
+                h2{
+                    margin-bottom: 7vh;
+                    font-size: 9rem;
+                }
+            }
+        }
+
+        .charly_mobile{
+            display: nth($display, 4 );
+        }
+    }
+
+}
