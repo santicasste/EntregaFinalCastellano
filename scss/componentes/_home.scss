@@ -2,7 +2,7 @@
 
 @import "../utilities/variables";
 @import "../componentes/lists";
-
+@import "../componentes/mixin";
 
 .contenedor_main_home {
 
@@ -45,12 +45,8 @@
         }
 
         .contenedor_info {
-            font-style: oblique;
-            max-width: 70%;
-            margin: auto;
-            height: auto;
-            padding: 20px;
-            border: 1px solid #2e0f15;
+            
+            @include texto_cuadro;
 
             p {
                 color: nth($paleta_colores , 3);

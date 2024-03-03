@@ -47,7 +47,7 @@
                 }
                 .descripcion_carrusel{
                     color:#ececec;
-                    background-color: #000000ea;
+                    background-color: #0c0b0b90;
                     font-style: italic;
                     margin: 30px;
                     padding: 2px;
@@ -78,5 +78,11 @@
                 font-size: 2.12vh;
             }
         }
+
+        .carousel{
+            max-height: 30rem; 
+            margin: 0 auto; 
+        }
+
     }
 }

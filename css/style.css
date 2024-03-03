@@ -180,7 +180,7 @@ footer .icono_footer {
 }
 .main_carrera .carousel .carousel-inner .carousel-item .descripcion_carrusel {
   color: #ececec;
-  background-color: rgba(0, 0, 0, 0.9176470588);
+  background-color: rgba(12, 11, 11, 0.5647058824);
   font-style: italic;
   margin: 30px;
   padding: 2px;
@@ -197,6 +197,10 @@ footer .icono_footer {
   }
   .main_carrera .descripcion_carrera p {
     font-size: 2.12vh;
+  }
+  .main_carrera .carousel {
+    max-height: 30rem;
+    margin: 0 auto;
   }
 }
 .main_disco {
