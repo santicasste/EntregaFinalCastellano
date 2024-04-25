@@ -147,13 +147,13 @@ footer .icono_footer {
 .main_carrera {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 20% 60%;
+  grid-template-rows: auto auto;
 }
 .main_carrera .titulos_carrera {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3vh;
+  padding-top: 4rem;
 }
 .main_carrera .titulos_carrera .titulo_1_carrera {
   color: #eff6e0;
@@ -163,27 +163,21 @@ footer .icono_footer {
   color: #840705;
   font-size: 5.3vh;
 }
-.main_carrera .descripcion_carrera {
-  margin: 1rem;
+.main_carrera .container_productos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 6rem;
+}
+.main_carrera .container_productos .producto {
+  background-color: #eff6e0;
+  max-width: 34.1%;
+  border-radius: 5%;
+}
+.main_carrera .container_productos .producto .btn_carrito {
+  padding: 0.4vh;
+}
+.main_carrera .container_carrito .h2 {
   color: #cfcfcf;
-  font-style: oblique;
-  max-width: 70%;
-  margin: auto;
-  height: auto;
-  text-align: center;
-  margin-bottom: 9vh;
-  margin-top: 3vh;
-}
-.main_carrera .carousel .carousel-inner .carousel-item .imagen {
-  height: 358px;
-  width: 534px;
-}
-.main_carrera .carousel .carousel-inner .carousel-item .descripcion_carrusel {
-  color: #ececec;
-  background-color: rgba(12, 11, 11, 0.5647058824);
-  font-style: italic;
-  margin: 30px;
-  padding: 2px;
 }
 
 @media screen and (min-width: 768px) {
@@ -194,13 +188,6 @@ footer .icono_footer {
   .main_carrera .titulos_carrera .titulo_2_carrera {
     color: #840705;
     font-size: 6.8vh;
-  }
-  .main_carrera .descripcion_carrera p {
-    font-size: 2.12vh;
-  }
-  .main_carrera .carousel {
-    max-height: 30rem;
-    margin: 0 auto;
   }
 }
 .main_disco {

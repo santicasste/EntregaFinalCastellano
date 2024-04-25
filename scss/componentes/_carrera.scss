@@ -5,15 +5,15 @@
 
 .main_carrera{
     
-    display: nth($display , 2);
+    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10% 20% 60%;
+    grid-template-rows: auto auto; 
 
     .titulos_carrera{
         display: nth($display , 1 );
         justify-content: center;
         align-items: center;
-        padding-top: 3vh;
+        padding-top: 4rem;
 
         .titulo_1_carrera{
             color: nth($paleta_colores , 1 );
@@ -26,33 +26,23 @@
         }
     }
 
-    .descripcion_carrera{
-        margin: 1rem;
-        color: nth($paleta_colores, 3 );
-        font-style: oblique;
-        max-width: 70%;
-        margin: auto;
-        height: auto;
-        text-align: center;
-        margin-bottom: 9vh;
-        margin-top: 3vh;
+    .container_productos{
+        display: nth($display, 2 );
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 6rem;
+        .producto{
+            background-color: nth($paleta_colores, 1 );
+            max-width:34.1%;
+            border-radius: 5%;
+            .btn_carrito{
+                padding: .40vh;
+            }
+        }
     }
 
-    .carousel{
-        .carousel-inner{
-            .carousel-item{
-                .imagen{
-                    height: 358px;
-                    width: 534px;
-                }
-                .descripcion_carrusel{
-                    color:#ececec;
-                    background-color: #0c0b0b90;
-                    font-style: italic;
-                    margin: 30px;
-                    padding: 2px;
-                }
-            }
+    .container_carrito{
+        .h2{
+            color: nth($paleta_colores, 3 );
         }
     }
 }
