@@ -41,8 +41,11 @@
     }
 
     .container_carrito{
-        .h2{
-            color: nth($paleta_colores, 3 );
+        .carrito_producto{
+            h2, p{
+                margin: 1.5rem;
+                color: nth($paleta_colores, 3 );
+            }
         }
     }
 }

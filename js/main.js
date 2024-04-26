@@ -1,9 +1,3 @@
-//! Declaraciones variables, clases y arrays 
-
-let nombreIngresado = "";
-let montoTotal = 0;
-
-
 class Producto {  // Creo una clase de productos para luego ahorrar tiempo y espacio al momento de crear uno.
     constructor(nombre, precio, tipo) {
         this.nombre = nombre;
@@ -34,12 +28,23 @@ const productos = [vida, pubis, remera, pantalon, piano, guitarra];
 
 const carrito = []; // Creo un array donde al momento de seleccionar comprar un producto el mismo ingrese aca.
 
-const filtrarArray = (array, propiedad, valor) => array.filter((producto) => producto[propiedad] === valor);
-
 //  Funciones
+const contenedorCarrito = document.querySelector(".container_carrito");
 
-function formatearMontoTotal(monto) {
-    return monto.toLocaleString('es-AR'); // Esta funcion hace que al momento de ver el monto aparezca separado por puntos " . " 
+function actualizarCarrito(){
+    if (carrito.length !== 0){
+        carrito.forEach((producto) => {
+            const div = document.createElement("div");
+            div.classList.add("carrito_producto")
+            div.innerHTML = ` 
+            <h2>${producto.nombre}</h2>
+            <p>$${producto.precio}</p>
+            <p>${producto.cantidad}</p>
+            <p>Subt: $${producto.cantidad * producto.precio}</p>
+            `;
+            contenedorCarrito.append(div);
+        })
+    } 
 }
 
 function agregarAlCarrito(producto){ // Fucnion para sumar la cantidad en caso de estar repetido
@@ -50,9 +55,14 @@ function agregarAlCarrito(producto){ // Fucnion para sumar la cantidad en caso d
     } else {
         carrito.push({...producto, cantidad: 1}) // Si no esta con la ayuda del spread muestro el producto mas una la nueva variable de cantidad iniciada en 1
     }
+    actualizarCarrito();
 }
 
+
 // DOM
+
+
+
 
 const contenedorProductos = document.querySelector(".container_productos");
 
@@ -68,18 +78,13 @@ productos.forEach((producto) => {   // Recorre el array de prodcutos y los va mo
 
     const btn = document.createElement("button"); // Creo el elemento "btn" en representacion a un boton de HTML
     btn.classList.add("btn_carrito"); // Le agrego la clase "btn_carrito"
-    btn.innerText = "Agragar al carrito";  // Junto al .innerTexto le pongo el texto que quiero que muestre 
+    btn.innerText = "Agregar al carrito";  // Junto al .innerTexto le pongo el texto que quiero que muestre 
     btn.addEventListener("click", () =>{ // Le agrego el evento deseado
         agregarAlCarrito(producto);
+        
+        console.log(carrito);
     });
     div.append(btn); // Junto a .append lo pongo en el "div"
     contenedorProductos.append(div); // Junto a .append lo pongo junto al contenedorProductos
 })
-/*
-            <div class="producto">
-                <img src="../images/pubis.jpg" alt="pubis_angelical">
-                <h3>Vinilo</h3>
-                <p>$110.000</p>
-                <button class="btn_carrito">Agregar al carrito</button>
-            </div>
-*/
+

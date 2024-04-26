@@ -176,7 +176,8 @@ footer .icono_footer {
 .main_carrera .container_productos .producto .btn_carrito {
   padding: 0.4vh;
 }
-.main_carrera .container_carrito .h2 {
+.main_carrera .container_carrito .carrito_producto h2, .main_carrera .container_carrito .carrito_producto p {
+  margin: 1.5rem;
   color: #cfcfcf;
 }
 
