@@ -26,28 +26,69 @@ let guitarra = new Producto("Guitarra eléctrica Rickenbacker 365", 873000, "Ins
 
 const productos = [vida, pubis, remera, pantalon, piano, guitarra];
 
-const carrito = []; // Creo un array donde al momento de seleccionar comprar un producto el mismo ingrese aca.
-
 //  Funciones
 const contenedorCarrito = document.querySelector(".container_carrito");
+const contenedorProductos = document.querySelector(".container_productos");
+const totalCarrito = document.querySelector(".carrito_total");
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //Si hay algo en el locale storage con .parse lo transforma en objeto para el carrito y si no hay nada el carrito si crea en 0 elementos
+
+
+// Funcion para actualizar el balance total
+
+function actualizarTotal(){
+    const montoTotal = carrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+    totalCarrito.innerText = `$${montoTotal}`;
+}
+
+
+// Funcion para borrar del carrito
+
+function borrarDelCarrito(producto){
+    const index = carrito.findIndex((item) => item.nombre === producto.nombre); // Busca con .findIndex si el nombre esta dentro del carrito
+    if (index !== -1) { // Valida 
+        carrito.splice(index, 1); // Lo borra 
+        localStorage.setItem("carrito", JSON.stringify(carrito)); // Actualiza el localStorage
+        actualizarCarrito(); // Actualiza el carrito
+    }
+}
+
+
+// Funcion para actualizar el carrito
 
 function actualizarCarrito(){
-    if (carrito.length !== 0){
-        carrito.forEach((producto) => {
-            const div = document.createElement("div");
-            div.classList.add("carrito_producto")
-            div.innerHTML = ` 
+    contenedorCarrito.innerHTML = ""; // Limpiamos el contenido existente antes de volver a renderizar
+
+    if (carrito.length !== 0){  // Valida
+        carrito.forEach((producto) => {  // Recorre el carrito y crea un div con su respectivo texto e informacion para cada uno
+            const div = document.createElement("div"); 
+            div.classList.add("carrito_producto") 
+            div.innerHTML = `  
             <h2>${producto.nombre}</h2>
             <p>$${producto.precio}</p>
             <p>${producto.cantidad}</p>
             <p>Subt: $${producto.cantidad * producto.precio}</p>
-            `;
-            contenedorCarrito.append(div);
+            `; 
+
+            const btn = document.createElement("button");
+            btn.classList.add("btn_producto");
+            btn.innerText = "Borrar ❌";
+            btn.addEventListener("click", () => {
+                borrarDelCarrito(producto);
+                console.log("Producto borrado");
+            });
+            div.append(btn);
+            contenedorCarrito.appendChild(div); // Utilizamos appendChild() para agregar el elemento al DOM
         })
     } 
+    actualizarTotal();
 }
 
-function agregarAlCarrito(producto){ // Fucnion para sumar la cantidad en caso de estar repetido
+actualizarCarrito(); // Uso esta funcion para que aparezca en pantalla si los productos cargados por mas que la misma se renueve
+
+// Funcion para agragar al carrito
+
+function agregarAlCarrito(producto){ // Funcion para sumar la cantidad en caso de estar repetido
     const prodEncontrado = carrito.find((item) => item.nombre === producto.nombre); // Creo una const donde busca en el carrito si ya se encuentra el nombre del producto que quiera agregar
 
     if (prodEncontrado){ // Si esta le suma uno a la cantidad
@@ -56,15 +97,9 @@ function agregarAlCarrito(producto){ // Fucnion para sumar la cantidad en caso d
         carrito.push({...producto, cantidad: 1}) // Si no esta con la ayuda del spread muestro el producto mas una la nueva variable de cantidad iniciada en 1
     }
     actualizarCarrito();
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-
-// DOM
-
-
-
-
-const contenedorProductos = document.querySelector(".container_productos");
 
 productos.forEach((producto) => {   // Recorre el array de prodcutos y los va mostrando en la página 
     const div = document.createElement("div"); // Creo el elemento "div" que representa al div del HTML
@@ -72,8 +107,8 @@ productos.forEach((producto) => {   // Recorre el array de prodcutos y los va mo
 
     div.innerHTML = ` 
         <img src="../images/pubis.jpg" alt="pubis_angelical">
-        <h3>${producto.nombre}</h3>
-        <p>$${producto.precio}</p>
+        <h3 class="producto_data">${producto.nombre}</h3>
+        <p class="producto_data">$${producto.precio}</p>
     `; // Junto al .innerHTML voy poniendo que quiero que aparezca en la web
 
     const btn = document.createElement("button"); // Creo el elemento "btn" en representacion a un boton de HTML

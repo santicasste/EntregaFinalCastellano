@@ -1,52 +1,112 @@
 @import "../utilities/variables";
 @import "../componentes/lists";
 
-
-
-.main_carrera{
-    
+.main_carrera {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto; 
+    
 
-    .titulos_carrera{
+    .titulos_carrera {
         display: nth($display , 1 );
         justify-content: center;
         align-items: center;
         padding-top: 4rem;
+        
 
-        .titulo_1_carrera{
+        .titulo_1_carrera {
             color: nth($paleta_colores , 1 );
             font-size: 5vh;
         }
 
-        .titulo_2_carrera{
+        .titulo_2_carrera {
             color: nth($paleta_colores , 5 );
             font-size: 5.3vh;
         }
     }
 
-    .container_productos{
+    .container_productos {
         display: nth($display, 2 );
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
         margin-top: 6rem;
-        .producto{
+
+        .producto {
             background-color: nth($paleta_colores, 1 );
-            max-width:34.1%;
-            border-radius: 5%;
-            .btn_carrito{
-                padding: .40vh;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            h3, p {
+                margin: 10px 0;
+                color: nth($paleta_colores, 3);
+            }
+            .producto_data{
+                color: nth($paleta_colores , 7 );
+            }
+            .btn_carrito {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                border: none;
+                background-color: nth($paleta_colores, 5);
+                color: white;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.6s ease;
+
+                &:hover {
+                    background-color: darken(nth($paleta_colores, 5), 10%);
+                }
             }
         }
     }
 
-    .container_carrito{
-        .carrito_producto{
-            h2, p{
+    .container_carrito {
+        .carrito_producto {
+            h2, p {
                 margin: 1.5rem;
-                color: nth($paleta_colores, 3 );
+                color: nth($paleta_colores, 3);
             }
+
+            .btn_producto {
+                background-color: nth($paleta_colores, 5 ); 
+                color: nth($paleta_colores, 2 ); 
+                margin-left: 1.5rem;
+                margin-bottom: 3rem;
+                padding: 8px 16px; 
+                border: none; 
+                border-radius: 4px; 
+                cursor: pointer; 
+                transition: background-color 0.6s ease; 
+
+            
+                &:hover {
+                    background-color: #cc0000; 
+                }
+            
+                &:focus {
+                    outline: none;
+                }
+            
+                &:active {
+                    transform: translateY(1px); 
+                }
+            }
+            
         }
+
+        
+    }
+
+    .carrito_total {
+        margin: 2.5rem;
+        color: nth($paleta_colores, 1);
     }
 }
 
