@@ -1,0 +1,39 @@
+[
+    {
+        "img":"../images/vida.jpeg",
+        "nombre":"Vida",
+        "precio":"58399",
+        "tipo":"Vinilo"
+    },
+    {
+        "img":"../images/pubis.jpg",
+        "nombre":"Pubis Angelical",
+        "precio":"58199",
+        "tipo":"Vinilo"
+    },
+    {
+        "img":"../images/pianobar.jpeg",
+        "nombre":"Piano Bar",
+        "precio":"58199",
+        "tipo":"Vinilo"
+    },
+    {
+        "img":"../images/brazalete.png",
+        "nombre":"Brazalete Say No More",
+        "precio":"20599",
+        "tipo":"Indumentaria"
+    },
+    {
+        "img":"../images/piano.jpeg",
+        "nombre":"Piano Yamaha CP-70",
+        "precio":"12000000",
+        "tipo":"Instrumento"
+    },
+    {
+        "img":"../images/guitarra.png",
+        "nombre":"Guitarra Rickenbacker 365",
+        "precio":"873000",
+        "tipo":"Instrumento"
+    }
+    
+]
