@@ -1,7 +1,7 @@
 
 
 
-fetch("/data/productos.json")
+fetch("../data/productos.json")
     .then(res => res.json()) 
     .then(data => {
         data.forEach((producto) => {   // Recorre el array de prodcutos y los va mostrando en la página 
@@ -57,7 +57,6 @@ function borrarDelCarrito(producto){
         actualizarCarrito(); // Actualiza el carrito
     }
 }
-
 
 // Funcion para actualizar el carrito
 
