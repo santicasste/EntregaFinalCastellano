@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import './NavBar.css';
 import '../cartwidget/CarWidget';
 import CarWidget from '../cartwidget/CarWidget';
+import { Link } from 'react-router-dom';
 const NavBar = ({handleCategoria}) => {
 
     const cambiarCategoria = (categoria) => {
@@ -17,10 +18,18 @@ const NavBar = ({handleCategoria}) => {
                 </div>
 
                 <div>
-                    <Button className='links' onClick={()=> cambiarCategoria('todos')}>HOME</Button>
-                    <Button className='links' onClick={()=> cambiarCategoria('electronics')}>ELECTRONICS</Button>
-                    <Button className='links' onClick={()=> cambiarCategoria('jewelery')}>JEWERLY</Button>
-                    {/* <Button className='links' onClick={()=> cambiarCategoria('Instrumento')}>INSTRUMENTO</Button> */}
+                    <Link to={'/'}>
+                        <Button className='links'>HOME</Button>
+                    </Link>
+                    
+                    <Link to={'/category/electronics'}>
+                        <Button className='links'>ELECTRONICS</Button>
+                    </Link>
+                    
+                    <Link to={'/category/jewelery'}>
+                    <Button className='links'>JEWELERY</Button>
+                    </Link>
+                    
                 </div>
 
                 <div>
