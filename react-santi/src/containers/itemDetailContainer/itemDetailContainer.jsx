@@ -1,30 +1,27 @@
-import { Button } from 'antd'
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = ({ idProduct }) => {
-    const [product, setProduct] = useState()
-    const { id } = useParams()
-
-    console.log("ID del producto:", id)
+const ItemDetailContainer = () => {
+    const [product, setProduct] = useState(null);
+    const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/products/${idProduct}`)
+        fetch(`https://fakestoreapi.com/products/${id}`)
             .then(res => res.json())
             .then(json => setProduct(json))
-            .catch(e => console.error(e))
-    }, [idProduct])
+            .catch(e => console.error(e));
+    }, [id]);
+
+    if (!product) return <div>Loading...</div>;
 
     return (
-        <>  
         <div>
-            <Link to={'/productDetail/:id'}>
-                <Button>Ver detalles</Button>
-            </Link>
+            <h1>{product.title}</h1>
+            <p>{product.description}</p>
+            <p>${product.price}</p>
+            <img src={product.image} alt={product.title} />
         </div>
-        </>
-
-    )
+    );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

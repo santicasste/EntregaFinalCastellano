@@ -1,35 +1,31 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import './NavBar.css';
-import '../cartwidget/CarWidget';
 import CarWidget from '../cartwidget/CarWidget';
 import { Link } from 'react-router-dom';
-const NavBar = ({handleCategoria}) => {
 
-    const cambiarCategoria = (categoria) => {
-        handleCategoria(categoria)
-    }
-
+const NavBar = () => {
     return (
         <header>
-                        <nav className='headerContainer'>
+            <nav className='headerContainer'>
                 <div>
-                    <h1 onClick={()=> cambiarCategoria('todos')}>TiendaGarcía</h1>
+                    <Link to='/'>
+                        <h1>TiendaGarcía</h1>
+                    </Link>
                 </div>
 
                 <div>
-                    <Link to={'/'}>
+                    <Link to='/'>
                         <Button className='links'>HOME</Button>
                     </Link>
                     
-                    <Link to={'/category/electronics'}>
+                    <Link to='/category/electronics'>
                         <Button className='links'>ELECTRONICS</Button>
                     </Link>
                     
-                    <Link to={'/category/jewelery'}>
-                    <Button className='links'>JEWELERY</Button>
+                    <Link to='/category/jewelery'>
+                        <Button className='links'>JEWELERY</Button>
                     </Link>
-                    
                 </div>
 
                 <div>
@@ -40,4 +36,4 @@ const NavBar = ({handleCategoria}) => {
     )
 }
 
-export default NavBar
+export default NavBar;
